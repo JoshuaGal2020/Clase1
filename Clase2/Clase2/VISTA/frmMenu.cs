@@ -20,6 +20,7 @@ namespace Clase2.VISTA
         private void rOLESToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmROLES rol = new frmROLES();
+            rol.MdiParent = this;
             rol.Show();
         }
 

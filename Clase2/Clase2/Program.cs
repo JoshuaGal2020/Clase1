@@ -18,7 +18,7 @@ namespace Clase2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Logueo());
+            Application.Run(new frmMenu());
         }
     }
 }

@@ -52,7 +52,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="roles_usuario" Relationship="sistema_ventasModel.FK_roles_usuario_tb_usuarios" FromRole="tb_usuarios" ToRole="roles_usuario" />
         </EntityType>
         <EntityContainer Name="sistema_ventasEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tb_usuarios" EntityType="Self.tb_usuarios" />

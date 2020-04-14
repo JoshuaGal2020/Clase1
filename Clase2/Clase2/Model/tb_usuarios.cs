@@ -14,17 +14,8 @@ namespace Clase2.Model
     
     public partial class tb_usuarios
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_usuarios()
-        {
-            this.roles_usuario = new HashSet<roles_usuario>();
-        }
-    
         public int Id { get; set; }
         public string Email { get; set; }
         public string Contrasena { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<roles_usuario> roles_usuario { get; set; }
     }
 }
