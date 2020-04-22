@@ -4,10 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f73e38fc879a43678118d44f9dda686e" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="sistema_ventasModel.tb_usuarios" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="sistema_ventasModel.roles_usuario" Width="1.5" PointX="5.5" PointY="1.75" />
-        <AssociationConnector Association="sistema_ventasModel.FK_roles_usuario_tb_usuarios" />
+      <Diagram DiagramId="f73e38fc879a43678118d44f9dda686e" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="sistema_ventasModel.tb_usuarios" Width="1.5" PointX="6.125" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="sistema_ventasModel.roles_usuario" Width="1.5" PointX="3.375" PointY="0.75" />
+        <AssociationConnector Association="sistema_ventasModel.FK_roles_usuario_tb_usuarios" ></AssociationConnector>
+        <EntityTypeShape EntityType="sistema_ventasModel.detalleVenta" Width="1.5" PointX="0.625" PointY="0.875" />
+        <EntityTypeShape EntityType="sistema_ventasModel.tb_cliente" Width="1.5" PointX="2.75" PointY="8.125" />
+        <EntityTypeShape EntityType="sistema_ventasModel.tb_documento" Width="1.5" PointX="6.5" PointY="6.875" />
+        <EntityTypeShape EntityType="sistema_ventasModel.tb_venta" Width="1.5" PointX="2.125" PointY="4.5" />
+        <AssociationConnector Association="sistema_ventasModel.FK__detalleVe__idVen__6477ECF3" />
+        <AssociationConnector Association="sistema_ventasModel.FK__tb_venta__iDClie__66603565" />
+        <AssociationConnector Association="sistema_ventasModel.FK__tb_venta__idDocu__6754599E" />
+        <AssociationConnector Association="sistema_ventasModel.FK__tb_venta__iDUsua__656C112C" />
+        <EntityTypeShape EntityType="sistema_ventasModel.tb_producto" Width="1.5" PointX="0.5" PointY="7.625" />
+        <AssociationConnector Association="sistema_ventasModel.FK__detalleVe__idPro__6D0D32F4" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

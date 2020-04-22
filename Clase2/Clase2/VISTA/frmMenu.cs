@@ -27,7 +27,20 @@ namespace Clase2.VISTA
         private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUsuarios usu = new frmUsuarios();
+            usu.MdiParent = this;
             usu.Show();
+        }
+        public static frmVentas Ven = new frmVentas();
+        private void venderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            Ven.MdiParent = this;
+            Ven.Show();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

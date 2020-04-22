@@ -27,5 +27,10 @@ namespace Clase2.Model
     
         public virtual DbSet<tb_usuarios> tb_usuarios { get; set; }
         public virtual DbSet<roles_usuario> roles_usuario { get; set; }
+        public virtual DbSet<detalleVenta> detalleVenta { get; set; }
+        public virtual DbSet<tb_cliente> tb_cliente { get; set; }
+        public virtual DbSet<tb_documento> tb_documento { get; set; }
+        public virtual DbSet<tb_venta> tb_venta { get; set; }
+        public virtual DbSet<tb_producto> tb_producto { get; set; }
     }
 }
