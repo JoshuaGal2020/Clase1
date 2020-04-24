@@ -56,6 +56,8 @@
             this.TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -248,6 +250,7 @@
             this.dtgProductos.ReadOnly = true;
             this.dtgProductos.Size = new System.Drawing.Size(967, 223);
             this.dtgProductos.TabIndex = 20;
+            this.dtgProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProductos_CellClick);
             // 
             // CODIGO
             // 
@@ -299,12 +302,32 @@
             this.textBox1.Size = new System.Drawing.Size(191, 53);
             this.textBox1.TabIndex = 22;
             // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(927, 139);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 24);
+            this.btnBorrar.TabIndex = 23;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(826, 145);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.TabIndex = 24;
+            // 
             // frmVentas
             // 
             this.AcceptButton = this.btnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1030, 660);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dtgProductos);
@@ -367,5 +390,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Label label11;
     }
 }

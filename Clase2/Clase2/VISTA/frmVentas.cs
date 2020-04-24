@@ -14,6 +14,7 @@ namespace Clase2.VISTA
 {
     public partial class frmVentas : Form
     {
+        private int n = 0;
         public frmVentas()
         {
             InitializeComponent();
@@ -68,18 +69,20 @@ namespace Clase2.VISTA
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 calculo();
+                
                 
             }
             catch (Exception ex)
             {
 
             }
-
-
+            
             dtgProductos.Rows.Add(txtIdProducto.Text,txtNombreProducto.Text,txtPrecioProd.Text,txtCantidad.Text,txtTotal.Text);
+
 
         }
 
@@ -89,6 +92,7 @@ namespace Clase2.VISTA
         }
         void calculo() 
         {
+
             try
             {
                 Double precioprod;
@@ -100,10 +104,7 @@ namespace Clase2.VISTA
 
                 total = precioprod * cantidad;
 
-                txtTotal.Text = total.ToString();
-
-                
-                
+                txtTotal.Text = total.ToString();             
 
             }
             catch (Exception ex)
@@ -113,6 +114,23 @@ namespace Clase2.VISTA
                 txtCantidad.Select();
             }
         }
-        
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {           
+            if (n!=-1)
+            {
+                dtgProductos.Rows.RemoveAt(n);
+            }
+        }
+
+        private void dtgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           n = e.RowIndex;
+
+            if (n!=-1)
+            {
+                label11.Text = (string)dtgProductos.Rows[n].Cells[1].Value;
+            }
+        }
     }
 }
