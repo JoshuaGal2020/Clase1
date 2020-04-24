@@ -20,15 +20,17 @@ namespace Clase2.VISTA.formulariosdebusqueda
 
         private void frmBusqueda_Load(object sender, EventArgs e)
         {
-            cargar();
+            filtro();
         }
-
-        void cargar() 
+        void filtro()
         {
             using (sistema_ventasEntities1 bd = new sistema_ventasEntities1())
             {
+                String Nombre = txtBusqueda.Text;
 
-                var Jointablas = from tbprod in bd.tb_producto                               
+                var Buscarprod = from tbprod in bd.tb_producto
+
+                                 where tbprod.nombreProducto.Contains(Nombre)
 
                                  select new
                                  {
@@ -37,13 +39,25 @@ namespace Clase2.VISTA.formulariosdebusqueda
                                      Precio = tbprod.precioProducto
                                  };
 
-             dtgProductos.DataSource = Jointablas.ToList();
-
-
+                dtgProductos.DataSource = Buscarprod.ToList();
             }
         }
 
-        private void dtgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            filtro();
+        }
+
+        private void dtgProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            envioTelmex();
+        }
+        void envioTelmex() 
         {
             String Id = dtgProductos.CurrentRow.Cells[0].Value.ToString();
             String Nombre = dtgProductos.CurrentRow.Cells[1].Value.ToString();
@@ -55,31 +69,14 @@ namespace Clase2.VISTA.formulariosdebusqueda
             frmMenu.Ven.txtPrecioProd.Text = Precio;
 
             frmMenu.Ven.txtCantidad.Focus();
+            this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dtgProductos_KeyDown(object sender, KeyEventArgs e)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            using (sistema_ventasEntities1 bd = new sistema_ventasEntities1()) 
+            if (e.KeyCode == Keys.Enter) 
             {
-                String Nombre = txtBusqueda.Text;
-
-                var Buscarprod = from tbprod in bd.tb_producto
-                                 
-                                 where tbprod.nombreProducto == Nombre
-
-                                 select new
-                                 {
-                                     Id = tbprod.idProducto,
-                                     Nombre = tbprod.nombreProducto,
-                                     Precio = tbprod.precioProducto
-                                 };
-
-                dtgProductos.DataSource = Buscarprod.ToList();
+                envioTelmex();
             }
         }
     }

@@ -68,8 +68,15 @@ namespace Clase2.VISTA
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                calculo();
+                
+            }
+            catch (Exception ex)
+            {
 
-
+            }
 
 
             dtgProductos.Rows.Add(txtIdProducto.Text,txtNombreProducto.Text,txtPrecioProd.Text,txtCantidad.Text,txtTotal.Text);
@@ -77,6 +84,10 @@ namespace Clase2.VISTA
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            calculo();
+        }
+        void calculo() 
         {
             try
             {
@@ -91,13 +102,17 @@ namespace Clase2.VISTA
 
                 txtTotal.Text = total.ToString();
 
+                
+                
+
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 txtCantidad.Text = "0";
                 MessageBox.Show("NO SE PUEDE OPERAR CANTIDADES MENORES A 0");
                 txtCantidad.Select();
             }
         }
+        
     }
 }
