@@ -43,7 +43,7 @@
             this.dtgProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgProductos.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dtgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgProductos.GridColor = System.Drawing.SystemColors.Window;
+            this.dtgProductos.GridColor = System.Drawing.SystemColors.MenuText;
             this.dtgProductos.Location = new System.Drawing.Point(77, 115);
             this.dtgProductos.Name = "dtgProductos";
             this.dtgProductos.Size = new System.Drawing.Size(655, 302);
