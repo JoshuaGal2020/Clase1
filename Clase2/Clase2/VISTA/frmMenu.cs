@@ -30,10 +30,10 @@ namespace Clase2.VISTA
             usu.MdiParent = this;
             usu.Show();
         }
+
         public static frmVentas Ven = new frmVentas();
         private void venderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             Ven.MdiParent = this;
             Ven.Show();
         }

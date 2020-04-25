@@ -76,8 +76,7 @@ namespace Clase2.VISTA
             try
             {
                 calculo();
-                
-                
+                               
             }
             catch (Exception ex)
             {

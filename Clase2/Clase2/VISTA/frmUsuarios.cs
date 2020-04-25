@@ -31,7 +31,6 @@ namespace Clase2.VISTA
 
                 }
 
-
                 //dtvUsuarios.DataSource = db.tb_usuarios.ToList();
             }
 
