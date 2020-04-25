@@ -24,6 +24,7 @@ namespace Clase2.VISTA
         {
             CargarCombo();
             retornarid();
+           
         }
 
         void retornarid() 
@@ -58,6 +59,8 @@ namespace Clase2.VISTA
                 cmbTipoD.DataSource = doc;
                 cmbTipoD.DisplayMember = "nombreDocumento";
                 cmbTipoD.ValueMember = "iDDocumento";
+
+                
             }
         }
 
@@ -83,7 +86,14 @@ namespace Clase2.VISTA
             
             dtgProductos.Rows.Add(txtIdProducto.Text,txtNombreProducto.Text,txtPrecioProd.Text,txtCantidad.Text,txtTotal.Text);
 
+            double toto = 0;
+            foreach (DataGridViewRow row in dtgProductos.Rows)
+            {
+                toto += Convert.ToDouble(row.Cells["TOTAL"].Value);
+            }
+            txtTot.Text = Convert.ToString(toto);
 
+            
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
@@ -116,11 +126,21 @@ namespace Clase2.VISTA
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
-        {           
-            if (n!=-1)
+        {
+           
+            if (n != -1)
             {
                 dtgProductos.Rows.RemoveAt(n);
             }
+
+            double toto = 0;
+            foreach (DataGridViewRow row in dtgProductos.Rows)
+            {
+                toto += Convert.ToDouble(row.Cells["TOTAL"].Value);
+            }
+            txtTot.Text = Convert.ToString(toto);
+
+
         }
 
         private void dtgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -132,5 +152,6 @@ namespace Clase2.VISTA
                 label11.Text = (string)dtgProductos.Rows[n].Cells[1].Value;
             }
         }
+
     }
 }

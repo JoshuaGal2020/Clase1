@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusqueda));
             this.dtgProductos = new System.Windows.Forms.DataGridView();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.dtgProductos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBusqueda";
             this.Text = "frmBusqueda";
             this.Load += new System.EventHandler(this.frmBusqueda_Load);

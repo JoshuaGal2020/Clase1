@@ -22,16 +22,17 @@ namespace Clase2.VISTA
             using (sistema_ventasEntities1 db = new sistema_ventasEntities1())
             {
 
-                //var tb_usuarios = db.tb_usuarios;
+                var tb_usuarios = db.tb_usuarios;
 
-                //foreach (var iterardatosTbUsuarios in tb_usuarios) {
+                foreach (var iterardatosTbUsuarios in tb_usuarios)
+                {
 
-                //    dtvUsuarios.Rows.Add(iterardatosTbUsuarios.Email, iterardatosTbUsuarios.Contrasena);
+                    dtvUsuarios.Rows.Add(iterardatosTbUsuarios.Id, iterardatosTbUsuarios.Email, iterardatosTbUsuarios.Contrasena);
 
-                //}
+                }
 
 
-                dtvUsuarios.DataSource = db.tb_usuarios.ToList();
+                //dtvUsuarios.DataSource = db.tb_usuarios.ToList();
             }
 
         }
@@ -41,6 +42,7 @@ namespace Clase2.VISTA
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            dtvUsuarios.Rows.Clear();
             cargardatos();
         }
 
@@ -55,8 +57,10 @@ namespace Clase2.VISTA
                 db.tb_usuarios.Add(user);
                 db.SaveChanges();
             }
-            cargardatos();
             limpiardatos();
+            dtvUsuarios.Rows.Clear();
+            cargardatos();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -70,8 +74,10 @@ namespace Clase2.VISTA
                 db.tb_usuarios.Remove(user);
                 db.SaveChanges();
             }
-            cargardatos();
             limpiardatos();
+            dtvUsuarios.Rows.Clear();
+            cargardatos();
+            
         }
 
         private void dtvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -80,7 +86,6 @@ namespace Clase2.VISTA
             String Contra = dtvUsuarios.CurrentRow.Cells[2].Value.ToString();
             txtUsuario.Text = Email;
             txtContrasena.Text = Contra;
-            cargardatos();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -92,11 +97,11 @@ namespace Clase2.VISTA
                 user.Email = txtUsuario.Text;
                 user.Contrasena = txtContrasena.Text;
                 db.Entry(user).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                
+                db.SaveChanges();                
             }
-            cargardatos();
             limpiardatos();
+            dtvUsuarios.Rows.Clear();
+            cargardatos();
         }
 
         private void Usuarios_Load(object sender, EventArgs e)
