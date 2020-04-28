@@ -60,6 +60,8 @@
             this.txtTot = new System.Windows.Forms.TextBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -351,7 +353,7 @@
             // btnBorrar
             // 
             this.btnBorrar.Font = new System.Drawing.Font("Algerian", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.Location = new System.Drawing.Point(895, 77);
+            this.btnBorrar.Location = new System.Drawing.Point(895, 110);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(107, 34);
             this.btnBorrar.TabIndex = 23;
@@ -365,10 +367,29 @@
             this.label11.BackColor = System.Drawing.SystemColors.WindowText;
             this.label11.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(738, 77);
+            this.label11.Location = new System.Drawing.Point(738, 110);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(0, 23);
             this.label11.TabIndex = 24;
+            // 
+            // btnVentas
+            // 
+            this.btnVentas.Font = new System.Drawing.Font("Algerian", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.Location = new System.Drawing.Point(864, 584);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(120, 46);
+            this.btnVentas.TabIndex = 25;
+            this.btnVentas.Text = "Guardar Venta";
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.CustomFormat = "yyyy-MM-dd";
+            this.dtpFecha.Location = new System.Drawing.Point(442, 38);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(243, 20);
+            this.dtpFecha.TabIndex = 26;
             // 
             // frmVentas
             // 
@@ -379,6 +400,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1030, 660);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.txtTot);
@@ -447,5 +470,7 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox txtTot;
+        private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }
