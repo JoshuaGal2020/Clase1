@@ -40,7 +40,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtIDNumercion = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCodigoBusqueda = new System.Windows.Forms.TextBox();
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.txtPrecioProd = new System.Windows.Forms.TextBox();
@@ -182,13 +182,14 @@
             this.txtIDNumercion.Size = new System.Drawing.Size(124, 20);
             this.txtIDNumercion.TabIndex = 9;
             // 
-            // textBox2
+            // txtCodigoBusqueda
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox2.Location = new System.Drawing.Point(198, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtCodigoBusqueda.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCodigoBusqueda.Location = new System.Drawing.Point(198, 200);
+            this.txtCodigoBusqueda.Name = "txtCodigoBusqueda";
+            this.txtCodigoBusqueda.Size = new System.Drawing.Size(161, 20);
+            this.txtCodigoBusqueda.TabIndex = 10;
+            this.txtCodigoBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodigoBusqueda_KeyUp);
             // 
             // txtIdProducto
             // 
@@ -226,6 +227,7 @@
             this.txtCantidad.TabIndex = 14;
             this.txtCantidad.Text = "1";
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyUp);
             // 
             // txtTotal
             // 
@@ -393,7 +395,6 @@
             // 
             // frmVentas
             // 
-            this.AcceptButton = this.btnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumBlue;
@@ -416,7 +417,7 @@
             this.Controls.Add(this.txtPrecioProd);
             this.Controls.Add(this.txtNombreProducto);
             this.Controls.Add(this.txtIdProducto);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCodigoBusqueda);
             this.Controls.Add(this.txtIDNumercion);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -450,7 +451,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtIDNumercion;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCodigoBusqueda;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAgregar;

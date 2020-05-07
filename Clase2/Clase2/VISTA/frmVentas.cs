@@ -22,8 +22,9 @@ namespace Clase2.VISTA
        
         private void frmVentas_Load(object sender, EventArgs e)
         {
-            CargarCombo();
             retornarid();
+            CargarCombo();
+            
            
         }
 
@@ -121,8 +122,8 @@ namespace Clase2.VISTA
             }
             catch (Exception ex)
             {
-                txtCantidad.Text = "0";
-                MessageBox.Show("NO SE PUEDE OPERAR CANTIDADES MENORES A 0");
+                txtCantidad.Text = "1";
+                
                 txtCantidad.Select();
             }
         }
@@ -197,6 +198,58 @@ namespace Clase2.VISTA
                     bd.detalleVenta.Add(det);
                     bd.SaveChanges();
                 }
+            }
+            retornarid();
+            dtgProductos.Rows.Clear();
+            txtTot.Text = "";
+
+        }
+
+        private void txtCodigoBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtCodigoBusqueda.Text == "")
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    button1.PerformClick();
+                }
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                using (sistema_ventasEntities1 bd = new sistema_ventasEntities1())
+                {
+                    tb_producto pro = new tb_producto();
+
+                    int buscar = int.Parse(txtCodigoBusqueda.Text);
+                    pro = bd.tb_producto.Where(idBusqueda => idBusqueda.idProducto == buscar).First();
+                    txtIdProducto.Text = Convert.ToString(pro.idProducto);
+                    txtNombreProducto.Text = Convert.ToString(pro.nombreProducto);
+                    txtPrecioProd.Text = Convert.ToString(pro.precioProducto);
+                    txtCantidad.Focus();
+                    txtCodigoBusqueda.Text = "";
+
+                }
+            }
+            
+        }
+        int intentos = 1;
+        private void txtCantidad_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (intentos == 2)
+                {
+                    btnAgregar.PerformClick();
+                    
+                    txtIdProducto.Text = "";
+                    txtNombreProducto.Text = "";
+                    txtPrecioProd.Text = "";
+                    txtTotal.Text = "";
+                    intentos = 0;
+                    txtCantidad.Text = "1";
+                    txtCodigoBusqueda.Focus();
+                }
+                intentos += 1;
             }
         }
     }
