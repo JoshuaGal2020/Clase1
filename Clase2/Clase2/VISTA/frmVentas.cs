@@ -227,7 +227,7 @@ namespace Clase2.VISTA
                     txtPrecioProd.Text = Convert.ToString(pro.precioProducto);
                     txtCantidad.Focus();
                     txtCodigoBusqueda.Text = "";
-
+                    intentos = 2;
                 }
             }
             
@@ -251,6 +251,11 @@ namespace Clase2.VISTA
                 }
                 intentos += 1;
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

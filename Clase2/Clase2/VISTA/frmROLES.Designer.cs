@@ -39,6 +39,7 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dtVistaRoles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtVistaRoles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtVistaRoles.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dtVistaRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtVistaRoles.GridColor = System.Drawing.SystemColors.WindowText;
@@ -71,7 +72,7 @@
             this.Controls.Add(this.dtVistaRoles);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmROLES";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ROLES";
             this.Load += new System.EventHandler(this.frmROLES_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtVistaRoles)).EndInit();

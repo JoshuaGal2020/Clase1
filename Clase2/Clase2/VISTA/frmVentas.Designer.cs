@@ -62,6 +62,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnVentas = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -393,6 +394,19 @@
             this.dtpFecha.Size = new System.Drawing.Size(243, 20);
             this.dtpFecha.TabIndex = 26;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(1002, 1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 25);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,6 +415,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1030, 660);
+            this.ControlBox = false;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.label11);
@@ -473,5 +489,6 @@
         public System.Windows.Forms.TextBox txtTot;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Button button2;
     }
 }
