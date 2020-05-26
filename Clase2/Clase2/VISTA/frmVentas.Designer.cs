@@ -300,6 +300,7 @@
             this.dtgProductos.Size = new System.Drawing.Size(967, 223);
             this.dtgProductos.TabIndex = 20;
             this.dtgProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProductos_CellClick);
+            this.dtgProductos.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dtgProductos_RowsRemoved);
             // 
             // CODIGO
             // 
@@ -399,9 +400,9 @@
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1002, 1);
+            this.button2.Location = new System.Drawing.Point(997, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 25);
+            this.button2.Size = new System.Drawing.Size(32, 33);
             this.button2.TabIndex = 27;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
@@ -444,6 +445,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

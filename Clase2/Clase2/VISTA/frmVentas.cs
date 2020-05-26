@@ -89,14 +89,13 @@ namespace Clase2.VISTA
             
             dtgProductos.Rows.Add(txtIdProducto.Text,txtNombreProducto.Text,txtPrecioProd.Text,txtCantidad.Text,txtTotal.Text);
 
-            double toto = 0;
-            foreach (DataGridViewRow row in dtgProductos.Rows)
-            {
-                toto += Convert.ToDouble(row.Cells["TOTAL"].Value);
-            }
-            txtTot.Text = Convert.ToString(toto);
+            calcularTotalFinal();
 
-            
+            //dtgProductos.Refresh();
+            dtgProductos.ClearSelection();
+            int ObtenerUltimaFila = dtgProductos.Rows.Count - 1;
+            dtgProductos.FirstDisplayedScrollingRowIndex = ObtenerUltimaFila;
+            dtgProductos.Rows[ObtenerUltimaFila].Selected = true;
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
@@ -126,6 +125,17 @@ namespace Clase2.VISTA
                 
                 txtCantidad.Select();
             }
+
+        }
+
+        void calcularTotalFinal()
+        {
+            double toto = 0;
+            foreach (DataGridViewRow row in dtgProductos.Rows)
+            {
+                toto += Convert.ToDouble(row.Cells["TOTAL"].Value);
+            }
+            txtTot.Text = Convert.ToString(toto);
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -135,13 +145,7 @@ namespace Clase2.VISTA
             {
                 dtgProductos.Rows.RemoveAt(n);
             }
-
-            double toto = 0;
-            foreach (DataGridViewRow row in dtgProductos.Rows)
-            {
-                toto += Convert.ToDouble(row.Cells["TOTAL"].Value);
-            }
-            txtTot.Text = Convert.ToString(toto);
+            calcularTotalFinal();
 
 
         }
@@ -257,5 +261,12 @@ namespace Clase2.VISTA
         {
             this.Hide();
         }
+
+        private void dtgProductos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            calcularTotalFinal();
+        }
+
+        
     }
 }
