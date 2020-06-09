@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clase2.VISTA;
+using Clase2.Consultasrpt;
 
 
 namespace Clase2
@@ -18,7 +19,7 @@ namespace Clase2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenu());
+            Application.Run(new FrmrptProductos());
         }
     }
 }
